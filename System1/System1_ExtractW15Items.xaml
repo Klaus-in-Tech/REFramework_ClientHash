@@ -112,7 +112,7 @@
                 </ui:Target>
               </ui:ExtractData.Target>
             </ui:ExtractData>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[string.Format(&quot;There are (0) work items&quot;, ExtractDataTable.Rows.Count)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[string.Format(&quot;There are {0} work items&quot;, ExtractDataTable.Rows.Count)]" />
             <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Keep">
               <ui:FilterDataTable.Filters>
                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -121,7 +121,7 @@
                       <InArgument x:TypeArguments="x:String">["Type"]</InArgument>
                     </ui:FilterOperationArgument.Column>
                     <ui:FilterOperationArgument.Operand>
-                      <InArgument x:TypeArguments="x:String">["W15"]</InArgument>
+                      <InArgument x:TypeArguments="x:String">["WI5"]</InArgument>
                     </ui:FilterOperationArgument.Operand>
                   </ui:FilterOperationArgument>
                   <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -140,7 +140,7 @@
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[string.Format(&quot;There are [0] W15 open work items&quot;, ExtractDataTable.Rows.Count)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[string.Format(&quot;There are {0} W15 open work items&quot;, ExtractDataTable.Rows.Count)]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

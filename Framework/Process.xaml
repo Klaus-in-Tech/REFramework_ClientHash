@@ -103,7 +103,7 @@
           <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="hashCode" />
         </OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_input">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="string.Format(&quot;{1}-{2}-{3}&quot;,clientId,clientName,clientCountry)" />
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="string.Format(&quot;{0}-{1}-{2}&quot;,clientId,clientName,clientCountry)" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

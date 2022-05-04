@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>998,1360</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1405,1360</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_GetWorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -53,7 +53,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -89,6 +89,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="System1_GetWorkItems" sap:VirtualizedContainerService.HintSize="602,1295" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -130,7 +131,7 @@
                 <OutArgument x:TypeArguments="str:Match">[match]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="str:Match">[Regex.Match(clientDetails, "\s+Client ID: (\w+)\s+Client Name: (\w+) (\w+)\s+Client Country: (\w+)")]</InArgument>
+                <InArgument x:TypeArguments="str:Match">[Regex.Match(clientDetails, "\s+Client ID: (\w+)\s+Client Name: (.+)\s+Client Country: (\w+)")]</InArgument>
               </Assign.Value>
             </Assign>
             <If Condition="[not match.Success]" sap:VirtualizedContainerService.HintSize="484,431" sap2010:WorkflowViewState.IdRef="If_1">
@@ -172,7 +173,7 @@
                       <OutArgument x:TypeArguments="x:String">[out_ClientName]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[match.Groups(2).Value+" "+match.Groups(3).Value]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[match.Groups(2).Value]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -180,7 +181,7 @@
                       <OutArgument x:TypeArguments="x:String">[out_ClientCountry]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[match.Groups(4).Value]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[match.Groups(3).Value]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                 </scg:List>

@@ -1,14 +1,18 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="_01A_ACME_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Credential" Type="InArgument(x:String)" />
+    <x:Property Name="in_EmailAccount" Type="InArgument(x:String)" />
   </x:Members>
   <this:_01A_ACME_Login.in_Credential>
     <InArgument x:TypeArguments="x:String" />
   </this:_01A_ACME_Login.in_Credential>
+  <this:_01A_ACME_Login.in_EmailAccount>
+    <InArgument x:TypeArguments="x:String" />
+  </this:_01A_ACME_Login.in_EmailAccount>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>998,1731</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1405,1669</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_01A_ACME_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -87,11 +91,11 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_Login" sap:VirtualizedContainerService.HintSize="602,1666" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_Login" sap:VirtualizedContainerService.HintSize="602,1604" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="password" />
       <Variable x:TypeArguments="x:String" Name="username" />
@@ -102,13 +106,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Credential]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="560,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[username]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser - ACME System 1" sap:VirtualizedContainerService.HintSize="560,1455" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a1c2a3ec9317f427759fd60dd302fe0f" Selector="&lt;html app='chrome.exe' title='ACME System 1 - *' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser - ACME System 1" sap:VirtualizedContainerService.HintSize="560,1393" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="a1c2a3ec9317f427759fd60dd302fe0f" Selector="&lt;html app='chrome.exe' title='ACME System 1 - *' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1309" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1247" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="errorMessage" />
             </Sequence.Variables>
@@ -118,7 +122,6 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into - Username" EmptyField="True" sap:VirtualizedContainerService.HintSize="484,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[username]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8499c953-d30b-4f7e-b8c5-1d393fc2f6d7" InformativeScreenshot="24810a7f942e3e801c961dd5254e97e1" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Log In' /&gt;&lt;webctrl tag='INPUT' type='email' /&gt;">
@@ -224,6 +227,9 @@
                       </InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_subject">
                         <Literal x:TypeArguments="x:String">Invalid Credentials</Literal>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailAccount">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_EmailAccount" />
                       </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>

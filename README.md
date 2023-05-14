@@ -19,7 +19,6 @@
 1. Modify the Config.xlsx file with the required input and output file paths.
 2. Run the project from UiPath Studio or Orchestrator.
 3. Monitor the progress of the project through the detailed logs generated.
-4. Check the output file for the generated hash codes.
 
 ## License
 

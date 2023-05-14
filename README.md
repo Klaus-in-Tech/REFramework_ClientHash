@@ -14,6 +14,11 @@
 4. Configure the Config.xlsx file.
 5. Run the project from UiPath Studio or Orchestrator.
 
+## Prerequisites
+- Register an account on https://acme-test.uipath.com/login
+- UiPath Studio
+- UiPath Orchestrator
+
 ## Usage
 
 1. Modify the Config.xlsx file with the required input and output file paths.

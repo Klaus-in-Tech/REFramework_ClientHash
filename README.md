@@ -9,7 +9,7 @@
 ### Installation
 
 1. Download or clone the repository to your local machine.
-2. Open UiPath Studio and import the **REFramework_ClientHash** project.
+2. Open UiPath Studio and import the `REFramework_ClientHash` project.
 3. Set up the required dependencies as specified in the Requirements section.
 4. Configure the Config.xlsx file.
 5. Run the project from UiPath Studio or Orchestrator.
@@ -27,10 +27,8 @@
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-### Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
-
-### Contact
-
-For any queries or suggestions, please feel free to contact the developer at `developer@example.com`.
+## Author
+- [Github](https://github.com/Klaus-in-Tech)
+- [LinkedIn](https://www.linkedin.com/in/kakoozaallanklaus/)
+- [Twitter](https://twitter.com/Klaus_in_Tech)
+- [Instagram](https://instagram.com/klaus_allan_?igshid=ZDdkNTZiNTM=)
